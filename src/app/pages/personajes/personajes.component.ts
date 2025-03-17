@@ -14,9 +14,12 @@ export class PersonajesComponent {
   arrPersonajesObservable: IPersonaje[] = [];
   arrPersonajesPromises: IPersonaje[] = [];
   personajesServices = inject(PersonajesService);
+  linkPrev: string = "";
+  linkNext: string = "";
 
   async ngOnInit() {
     /* Consumición Observables - nativo angular */
+    /*
     this.personajesServices.getAllObservable().subscribe({
       next: (data) => {
         this.arrPersonajesObservable = data.items
@@ -26,12 +29,27 @@ export class PersonajesComponent {
         console.log(error)
       }
     })
+      */
 
+    this.cargarPersonajes();
+
+  }
+
+  async goToNext() {
+    this.cargarPersonajes(this.linkNext)
+  }
+
+  goToPrev() {
+    this.cargarPersonajes(this.linkPrev)
+  }
+
+  async cargarPersonajes(url: string = "") {
     /* Consumición Promises - generico javascript */
     try {
-      let response: IResponse = await this.personajesServices.getAllPromise()
+      let response: IResponse = await this.personajesServices.getAllPromise(url)
+      this.linkNext = response.links.next;
+      this.linkPrev = response.links.previous;
       this.arrPersonajesPromises = response.items
-      console.log('promises', this.arrPersonajesPromises)
     } catch (error) {
       console.log(error)
     }
