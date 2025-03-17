@@ -17,7 +17,8 @@ export class PersonajesService {
   }
   
   /* promises en angular - peticiones asincronas generales en javascript */
-  getAllPromise(): Promise<IResponse> {
+  getAllPromise(url: string): Promise<IResponse> {
+    url = (url === "") ? "https://dragonball-api.com/api/characters?limit=8" : url
     return lastValueFrom(this.httpClient.get<IResponse>(this.baseUrl))
   }
   
