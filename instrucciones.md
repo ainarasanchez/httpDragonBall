@@ -12,3 +12,9 @@ https://web.dragonball-api.com/
  - Interface personaje
  - Servicios => que será el encargado de conectar con la API y traerse los datos. Y posteriormente servirlos a los diferentes componentes.
        - components/personaje-card => que es la tarjeta vamos a cargar del propio personaje.  
+
+
+GET + url => me trae información
+POST +url => me inserta nueva información
+PUT/PATH + url => me actualiza la información de un personaje
+DELETE + url => me borra un personaje
