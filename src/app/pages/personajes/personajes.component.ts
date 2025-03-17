@@ -2,10 +2,11 @@ import { Component, inject } from '@angular/core';
 import { IPersonaje } from '../../interfaces/ipersonaje.interface';
 import { PersonajesService } from '../../services/personajes.service';
 import { IResponse } from '../../interfaces/iresponse.interface';
+import { PersonajeCardComponent } from "../../components/personaje-card/personaje-card.component";
 
 @Component({
   selector: 'app-personajes',
-  imports: [],
+  imports: [PersonajeCardComponent],
   templateUrl: './personajes.component.html',
   styleUrl: './personajes.component.css'
 })
