@@ -17,6 +17,7 @@ export class VistaPersonajeComponent {
   async ngOnInit() {
     let id = Number(this.idPersonaje);
     // tendremos que llamar al servicio para traernos los datos de este personaje
+    this.isLoading = true;
     try {
       this.elPersonaje = await this.personajesServices.getById(id);
     } catch (error) {
