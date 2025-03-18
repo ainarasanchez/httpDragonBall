@@ -13,9 +13,14 @@ export class VistaPersonajeComponent {
   elPersonaje!: IPersonaje;
   personajesServices = inject(PersonajesService);
 
-  ngOnInit() {
+  async ngOnInit() {
     let id = Number(this.idPersonaje);
     // tendremos que llamar al servicio para traernos los datos de este personaje
+    try {
+      this.elPersonaje = await this.personajesServices.getById(id);
+    } catch (error) {
+      console.error(error);
+    }
   } 
 
 }
