@@ -10,8 +10,7 @@ export class VistaPersonajeComponent {
   @Input() idPersonaje: string = "";
 
   ngOnInit() {
-    console.log(this.idPersonaje);
-
+    let id = Number(this.idPersonaje);
   } 
 
 }
