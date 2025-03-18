@@ -7,6 +7,11 @@ figure {
       transform: scale(1.15) translateY(-10px);
     }
   }
+
+  .card {
+    cursor: pointer;
+  }
+  
   
   .imagesBall {
     min-height: 400px;
