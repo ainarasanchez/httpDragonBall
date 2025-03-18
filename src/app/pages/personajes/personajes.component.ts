@@ -28,11 +28,8 @@ export class PersonajesComponent {
       error: (error) => {
         console.log(error)
       }
-    })
-      */
-
+    })*/
     this.cargarPersonajes();
-
   }
 
   async goToNext() {
