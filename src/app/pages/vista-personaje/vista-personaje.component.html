@@ -1,9 +1,14 @@
-
-    <section class="container py-4">
-      <div class="row">
-        <figure class="col-12 col-md-3">
-          <img class="img-fluid" [src]="elPersonaje.image" [alt]="elPersonaje.name">
-        </figure>
+@if(isLoading === true){
+  <div class="text-center mt-5">
+    <img src="./images/skeleton.gif" alt="">
+  </div>
+}  
+@if(isLoading === false) {
+  <section class="container py-4">
+    <div class="row">
+      <figure class="col-12 col-md-3">
+        <img class="img-fluid" [src]="elPersonaje.image" [alt]="elPersonaje.name">
+      </figure>
         <div class="col-12 col-md-9">
           <h1 class="text-white">{{elPersonaje.name}}</h1>
           <hr class="border-white">
@@ -13,8 +18,9 @@
           <p class="text-warning">{{elPersonaje.maxKi}}</p>
           <p class="text-warning">{{elPersonaje.affiliation}}</p>
           <p class="text-warning">{{elPersonaje.description}}</p>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
+}
 
     
