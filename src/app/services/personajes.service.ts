@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { IResponse } from '../interfaces/iresponse.interface';
 import { lastValueFrom, Observable } from 'rxjs';
+import { IPersonaje } from '../interfaces/ipersonaje.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,10 @@ export class PersonajesService {
   getAllPromise(url: string): Promise<IResponse> {
     url = (url === "") ? "https://dragonball-api.com/api/characters?limit=8" : url
     return lastValueFrom(this.httpClient.get<IResponse>(url))
+  }
+
+  getById(id: number): Promise<IPersonaje> {
+    return lastValueFrom(this.httpClient.get<IPersonaje>(`${this.baseUrl}/${id}`))
   }
 
 }
