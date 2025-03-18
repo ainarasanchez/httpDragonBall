@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-vista-personaje',
@@ -7,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './vista-personaje.component.css'
 })
 export class VistaPersonajeComponent {
+  @Input() idPersonaje: string = "";
+
+  ngOnInit() {
+    console.log(this.idPersonaje);
+
+  } 
 
 }
