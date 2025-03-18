@@ -22,6 +22,8 @@ export class VistaPersonajeComponent {
       this.elPersonaje = await this.personajesServices.getById(id);
     } catch (error) {
       console.error(error);
+    } finally {
+      this.isLoading = false;
     }
   } 
 
