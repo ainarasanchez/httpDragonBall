@@ -12,6 +12,7 @@ export class VistaPersonajeComponent {
   @Input() idPersonaje: string = "";
   elPersonaje!: IPersonaje;
   personajesServices = inject(PersonajesService);
+  isLoading: boolean = false;
 
   async ngOnInit() {
     let id = Number(this.idPersonaje);
